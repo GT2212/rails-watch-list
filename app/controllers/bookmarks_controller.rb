@@ -17,9 +17,11 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    @bookmark = Bookmark.new(bookmark_params)
+    @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
+    redirect_to @bookmark.list, notice: 'Bookmark was successfully deleted.'
   end
+  
   private
   def bookmark_params
     params.require(:bookmark).permit(:comment, :movie_id)
