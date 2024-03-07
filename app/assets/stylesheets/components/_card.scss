@@ -1,0 +1,19 @@
+.card-list-index{
+  opacity: 0.7;
+  background-image: url("https://kettleheroes.com/wp-content/uploads/2022/02/Why-is-Popcorn-a-Movie-Food.jpg");
+  background-size: cover;
+  border: 2px solid rgb(177, 189, 160);
+  border-radius: 10px;
+  width: 250px;
+  height: 200px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  li{
+    font-size: 25px;
+    color: #000000;
+  }
+}
+.unordered-list-card{
+  padding-left: 0;
+}

@@ -1,2 +1,13 @@
-<h1><%= @list.name %></h1>
+<h1>Lists#show</h1>
 
+
+<%= @list.name%>
+
+<% @list.movies.each do |movie| %>
+<li><%= movie.title%></li>
+<li><%= movie.overview%></li>
+<li><%= movie.rating%></li>
+<%end%>
+
+<%= link_to "delete this bookmark", list_path(@list), class: "btn btn-danger button-delete fw-bolder", data: { turbo_method: :delete, turbo_confirm:
+ "Are you sure you want to delete this list?" } %>

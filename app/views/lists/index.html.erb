@@ -1,5 +1,18 @@
-<h1>All Lists</h1>
-
-<% @lists.each do |list| %>
-  <p><%= link_to list.name, list_path(list) %></p>
-<% end %>
+<div id="banner-index-list">
+  <h1>Save any kind of movies</h1>
+</div>
+  <div class="container">
+    <div class="d-flex justify-content-around">
+      <h2 class=" subtitle text-center my-4">My lists</h2>
+      <%=link_to "Create a new list", new_list_path, class: "button-create-list my-4"%>
+    </div>
+  </div>
+    <div class="container">
+      <ul class="row unordered-list-card">
+        <% @lists.each do |list| %>
+          <div class="card-list-index col-3 my-4 mx-3">
+            <li class="list-unstyled text-center"><%= list.name%></li>
+          </div>
+        <% end %>
+      </ul>
+    </div>

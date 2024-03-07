@@ -1,7 +1,4 @@
-# frozen_string_literal: true
-
 class ListsController < ApplicationController
-
   def index
     @lists = List.all
   end
@@ -15,18 +12,17 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new(list_params) # Assuming you have a list_params method for strong parameters
+    @list = List.new(set_params)
     if @list.save
-      redirect_to @list, notice: 'List was successfully created.'
+      redirect_to list_path(@list) , notice: "List was successfully created."
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
-
   private
 
-  def list_params
+  def set_params
     params.require(:list).permit(:name)
   end
 end
